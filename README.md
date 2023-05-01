@@ -30,9 +30,9 @@
 
 <html>
 <body>
-    <p>use App\Models\User; </p><br/>
-    <p>use Illuminate\Support\Facades\Hash;</p><br/>
-    <p>use Symfony\Component\HttpFoundation\Response;</p><br/>
+    <p>use App\Models\User; </p>
+    <p>use Illuminate\Support\Facades\Hash;</p>
+    <p>use Symfony\Component\HttpFoundation\Response;</p>
     <p>use Illuminate\Validation\Rules;</p>
 
 </body>
