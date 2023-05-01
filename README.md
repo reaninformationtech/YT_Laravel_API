@@ -2,8 +2,8 @@
 
 1-/ __composer create-project --prefer-dist laravel/laravel laravel-api__  <br/>
 > This is main Blockquote
-> >a- connect database <br/>
-    > >b- config valet <br/>
+ >a- connect database <br/>
+ >b- config valet <br/>
 
 2-/ composer require laravel/passport 
 3-/ php artisan migrate 
