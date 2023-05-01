@@ -1,7 +1,7 @@
 # How to Build REST API Laravel 10
 
 1-/ __composer create-project --prefer-dist laravel/laravel laravel-api__  <br/>
-> This is main Blockquote
+> This is main Blockquote <br/>
  >a- connect database <br/>
  >b- config valet <br/>
 
