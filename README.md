@@ -5,9 +5,9 @@
  >a- connect database <br/>
  >b- config valet <br/>
 
-2-/ composer require laravel/passport 
-3-/ php artisan migrate 
-4-/ php artisan passport:install
+2-/ composer require laravel/passport <br/>
+3-/ php artisan migrate <br/>
+4-/ php artisan passport:install<br/>
 
 5-/ update Model 
     a- app/Models/User.php => use Laravel\Passport\HasApiTokens; 
