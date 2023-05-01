@@ -74,7 +74,7 @@ Route::post('login', [AuthController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
 ````
 8-/ php artisan make:controller Api/ProductController</br>
-    
+
     public function index(Request $request){
         $product=Product::all();
         return response($product);
@@ -93,6 +93,7 @@ Route::post('register', [AuthController::class, 'register']);
 
 10-/ update routes/api.php </br>
 ````
+use App\Http\Controllers\Api\ProductController;
 
 Route::prefix('admin')->middleware('auth:api')->group(function () {
     Route::resource('getproduct', ProductController::class);
