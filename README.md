@@ -25,11 +25,7 @@
             'provider' => 'users',
         ],
 6-/ php artisan make:controller Api/AuthController  <br/>
-<html>
-<body>
-<p>Import into Controller</p>
-</body>
-</html>
+> __import into controller__ <br/>
     use App\Models\User;
     use Illuminate\Support\Facades\Hash;
     use Symfony\Component\HttpFoundation\Response;
