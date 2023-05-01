@@ -16,7 +16,7 @@
 
 <html>
 <body>
-<p>upadte guards</p>
+<p>update guards</p>
 </body>
 </html>
 
@@ -68,6 +68,8 @@
 
 7-/ update routes/api.php </br>
 ````
+use App\Http\Controllers\Api\AuthController;
+
 Route::post('login', [AuthController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
 ````
@@ -89,6 +91,7 @@ Route::post('register', [AuthController::class, 'register']);
 
 10-/ update routes/api.php </br>
 ````
+
 Route::prefix('admin')->middleware('auth:api')->group(function () {
     Route::resource('getproduct', ProductController::class);
 });
