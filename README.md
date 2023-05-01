@@ -1,8 +1,8 @@
-# YT_Laravel_API
+# How to Build REST API Laravel 10
 
-1-/ composer create-project --prefer-dist laravel/laravel laravel-api
-    a- connect database 
-    b- config valet 
+1-/ composer create-project --prefer-dist laravel/laravel laravel-api <br/>
+    a- connect database <br/>
+    b- config valet <br/>
 2-/ composer require laravel/passport 
 3-/ php artisan migrate 
 4-/ php artisan passport:install
