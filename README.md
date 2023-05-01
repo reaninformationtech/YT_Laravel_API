@@ -67,12 +67,17 @@
     }
 
 7-/ update routes/api.php </br>
-> a- Route::post('login', [AuthController::class, 'login']);</br>
-> b- Route::post('register', [AuthController::class, 'register']);</br>
+>`Add Router `<br/>
+>  <html>
+>  <body>
+>     <p>Route::post('login', [AuthController::class, 'login']);</p>
+>     <p>Route::post('register', [AuthController::class, 'register']);</p>
+> </body>
+> </html>
 
 8-/ php artisan make:controller Api/ProductController</br>
 9-/ php artisan make:model Product -mR   </br>
-**Creat Table** </br>
+> a- create table </br>
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
