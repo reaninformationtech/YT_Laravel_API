@@ -95,9 +95,7 @@
 >`Add Router `<br/>
 >  <html>
 >  <body>
->  <p>Route::prefix('admin')->middleware('auth:api')->group(function () {
-    Route::resource('getproduct', ProductController::class);
-});</p>
+>  Route::prefix('admin')->middleware('auth:api')->group(function () {Route::resource('getproduct', ProductController::class);});
 
 > </body>
 > </html>
