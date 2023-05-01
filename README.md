@@ -89,6 +89,8 @@ Route::post('register', [AuthController::class, 'register']);
             $table->timestamps();
         });
 
+## Then => php artisan migrate 
+
 10-/ update routes/api.php </br>
 ````
 
