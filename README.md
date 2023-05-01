@@ -67,14 +67,10 @@
     }
 
 7-/ update routes/api.php </br>
->`Add Router `<br/>
->  <html>
->  <body>
->     <p>Route::post('login', [AuthController::class, 'login']);</p>
->     <p>Route::post('register', [AuthController::class, 'register']);</p>
-> </body>
-> </html>
-
+````
+Route::post('login', [AuthController::class, 'login']);
+Route::post('register', [AuthController::class, 'register']);
+````
 8-/ php artisan make:controller Api/ProductController</br>
     
     public function index(Request $request){
