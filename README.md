@@ -1,4 +1,4 @@
-# How to Build REST API Laravel 10
+# How to Build REST API with Laravel 10
 
 1-/ __composer create-project --prefer-dist laravel/laravel laravel-api__  <br/>
 > Config <br/>
