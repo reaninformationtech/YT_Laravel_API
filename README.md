@@ -14,9 +14,9 @@
     a- app/Models/User.php => use Laravel\Passport\HasApiTokens; <br/>
     b- config/auth.php =>  <br/>
 
-    <html>
+<html>
 <body>
-<p>Let’s keep it as a code block and not render it for once</p>
+<p>Change in Guard</p>
 </body>
 </html>
 
