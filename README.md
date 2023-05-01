@@ -93,3 +93,11 @@ Route::prefix('admin')->middleware('auth:api')->group(function () {
     Route::resource('getproduct', ProductController::class);
 });
 ````
+## Data for testing
+````
+INSERT INTO products (name,price,created_at,updated_at) VALUES
+	 ('iphone x',120.000,NULL,NULL),
+	 ('Samsung',130.000,NULL,NULL);
+````
+
+
