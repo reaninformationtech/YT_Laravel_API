@@ -66,17 +66,13 @@
         return response($user, Response::HTTP_CREATED);
     }
 
+7-/ update routes/api.php </br>
+> a- Route::post('login', [AuthController::class, 'login']);
+> b- Route::post('register', [AuthController::class, 'register']);
 
-7-/ update routes/api.php 
-    a- Route::post('login', [AuthController::class, 'login']);
-    b- Route::post('register', [AuthController::class, 'register']);
-
-
-8-/ php artisan make:controller Api/ProductController
-
-9-/ php artisan make:model Product -mR   
-    a- create table 
-    
+8-/ php artisan make:controller Api/ProductController</br>
+9-/ php artisan make:model Product -mR   </br>
+> a- create table 
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
