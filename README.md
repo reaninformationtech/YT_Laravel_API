@@ -101,7 +101,9 @@
 > </html>
 
 ````
-```
-Look! You can see my backticks.
-```
+Route::prefix('admin')->middleware('auth:api')->group(function () {
+    Route::resource('getproduct', ProductController::class);
+});
+
+
 ````
