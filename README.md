@@ -12,8 +12,14 @@
 5-/ update Model <br/>
 > __Config__ <br/>
     a- app/Models/User.php => use Laravel\Passport\HasApiTokens; <br/>
-    b- config/auth.php =>
-    *** 
+    b- config/auth.php =>  <br/>
+
+    <html>
+<body>
+<p>Let’s keep it as a code block and not render it for once</p>
+</body>
+</html>
+
         'api' => [
             'driver' => 'passport',
             'provider' => 'users',
