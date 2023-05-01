@@ -25,8 +25,7 @@
             'provider' => 'users',
         ],
 6-/ php artisan make:controller Api/AuthController  <br/>
-> __import into controller__ <br/>
-`Hello This is a code`
+>`Import into controller `<br/>
 >  <html>
 >  <body>
 >     <p>use App\Models\User; </p>
