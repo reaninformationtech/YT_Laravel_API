@@ -9,9 +9,11 @@
 3-/ php artisan migrate <br/>
 4-/ php artisan passport:install<br/>
 
-5-/ update Model 
-    a- app/Models/User.php => use Laravel\Passport\HasApiTokens; 
+5-/ update Model <br/>
+> __Config__ <br/>
+    a- app/Models/User.php => use Laravel\Passport\HasApiTokens; <br/>
     b- config/auth.php =>
+    *** 
         'api' => [
             'driver' => 'passport',
             'provider' => 'users',
