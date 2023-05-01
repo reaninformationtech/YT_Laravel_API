@@ -3,6 +3,13 @@
 1-/ __composer create-project --prefer-dist laravel/laravel laravel-api__  <br/>
     >>a- connect database <br/>
     >>b- config valet <br/>
+    > This is main Blockquote
+> >This is nested Blockquote
+> >
+> >Let’s get out of nested
+>
+> Let’s get out of main
+
 2-/ composer require laravel/passport 
 3-/ php artisan migrate 
 4-/ php artisan passport:install
