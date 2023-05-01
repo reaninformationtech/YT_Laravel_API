@@ -1,6 +1,6 @@
 # How to Build REST API Laravel 10
 
-1-/ __composer create-project --prefer-dist laravel/laravel laravel-api __ <br/>
+1-/ __Bold__ composer create-project --prefer-dist laravel/laravel laravel-api __ <br/>
     a- connect database <br/>
     b- config valet <br/>
 2-/ composer require laravel/passport 
