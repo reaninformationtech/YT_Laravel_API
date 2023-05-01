@@ -92,18 +92,8 @@
         });
 
 10-/ update routes/api.php </br>
->`Add Router `<br/>
->  <html>
->  <body>
->  Route::prefix('admin')->middleware('auth:api')->group(function () {Route::resource('getproduct', ProductController::class);});
-
-> </body>
-> </html>
-
 ````
 Route::prefix('admin')->middleware('auth:api')->group(function () {
     Route::resource('getproduct', ProductController::class);
 });
-
-
 ````
