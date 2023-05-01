@@ -67,8 +67,8 @@
     }
 
 7-/ update routes/api.php </br>
-> a- Route::post('login', [AuthController::class, 'login']);
-> b- Route::post('register', [AuthController::class, 'register']);
+> a- Route::post('login', [AuthController::class, 'login']);</br>
+> b- Route::post('register', [AuthController::class, 'register']);</br>
 
 8-/ php artisan make:controller Api/ProductController</br>
 9-/ php artisan make:model Product -mR   </br>
