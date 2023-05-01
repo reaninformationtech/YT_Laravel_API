@@ -72,7 +72,7 @@
 
 8-/ php artisan make:controller Api/ProductController</br>
 9-/ php artisan make:model Product -mR   </br>
-> a- create table 
+> a- create table </br>
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
