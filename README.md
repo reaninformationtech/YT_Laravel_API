@@ -76,6 +76,12 @@
 > </html>
 
 8-/ php artisan make:controller Api/ProductController</br>
+    
+    public function index(Request $request){
+        $product=Product::all();
+        return response($product);
+    }
+
 9-/ php artisan make:model Product -mR   </br>
 ## Create table 
         Schema::create('products', function (Blueprint $table) {
