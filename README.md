@@ -27,10 +27,16 @@
 6-/ php artisan make:controller Api/AuthController  <br/>
 > __import into controller__ <br/>
 `Hello This is a code`
-    use App\Models\User; 
-    use Illuminate\Support\Facades\Hash;
-    use Symfony\Component\HttpFoundation\Response;
-    use Illuminate\Validation\Rules;
+
+<html>
+<body>
+    <p>use App\Models\User; </p><br/>
+    <p>use Illuminate\Support\Facades\Hash;</p><br/>
+    <p>use Symfony\Component\HttpFoundation\Response;</p><br/>
+    <p>use Illuminate\Validation\Rules;</p>
+
+</body>
+</html>
 
     *** Create Function Login 
 
