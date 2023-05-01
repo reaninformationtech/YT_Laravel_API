@@ -90,3 +90,14 @@
             $table->decimal('price', 12, 3)->nullable();
             $table->timestamps();
         });
+
+10-/ update routes/api.php </br>
+>`Add Router `<br/>
+>  <html>
+>  <body>
+>  <p>Route::prefix('admin')->middleware('auth:api')->group(function () {
+    Route::resource('getproduct', ProductController::class);
+});</p>
+
+> </body>
+> </html>
