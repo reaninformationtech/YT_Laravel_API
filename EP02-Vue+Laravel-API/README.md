@@ -1,4 +1,4 @@
-# How to Build REST API with Laravel + Vue 3 typescript
+# Build REST API with Laravel 
 
 1-/ __composer create-project --prefer-dist laravel/laravel laravel-api__  <br/>
 > Config <br/>
