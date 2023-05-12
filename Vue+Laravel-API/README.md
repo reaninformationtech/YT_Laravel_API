@@ -55,7 +55,7 @@
 
 
 
-7-/ php artisan make:controller Auth/AuthController  <br/>
+7-/ php artisan make:controller Auth/LoginController  <br/>
 >`Import into controller `<br/>
 >  <html>
 >  <body>
@@ -112,6 +112,17 @@
         ];
     }
 
+
+8-/ php artisan make:controller Auth/RegisterController  <br/>
+>`Import into controller `<br/>
+>  <html>
+>  <body>
+>   <p>use Illuminate\Support\Facades\Http;</p>
+>   <p>use App\Http\Requests\Auth\LoginRequest;</p>
+>   <p>use App\Http\Requests\Auth\RefreshTokenRequest;</p>
+>   <p>use App\Http\Controllers\API\BaseController as BaseController;</p>
+> </body>
+> </html>
 
 8-/ update routes/api.php </br>
 ````
