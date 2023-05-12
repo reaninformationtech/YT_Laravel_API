@@ -102,7 +102,7 @@
         return $this->sendResponse($response->json(), 'User info retrieved successfully.');
     }
 <br/>
-*** Create Request <br/>
+*** Create Request : php artisan make:request  Auth/LoginRequest <br/> 
 
     public function rules()
     {
