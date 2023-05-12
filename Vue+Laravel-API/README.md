@@ -24,7 +24,38 @@
             'driver' => 'passport',
             'provider' => 'users',
         ],
-6-/ php artisan make:controller Api/AuthController  <br/>
+
+6-/ php artisan make:controller API/BaseController  <br/>
+
+    *** Create Function Login 
+
+        public function sendResponse($result, $message)
+        {
+            $response = [
+                'success' => true,
+                'data'    => $result,
+                'message' => $message,
+                'statusCode' =>'200'
+            ];
+            return response()->json($response, 200);
+        }
+
+        public function sendError($error, $errorMessages = [], $code = 404)
+        {
+            $response = [
+                'success' => false,
+                'message' => $error,
+                'statusCode'=> $code
+            ];
+            if(!empty($errorMessages)){
+                $response['data'] = $errorMessages;
+            }
+            return response()->json($response, $code);
+        }
+
+
+
+7-/ php artisan make:controller Auth/AuthController  <br/>
 >`Import into controller `<br/>
 >  <html>
 >  <body>
@@ -37,34 +68,40 @@
 
     *** Create Function Login 
 
-    public function login(Request $request)
+   public function login(LoginRequest $request)
     {
-        if (auth()->attempt($request->all())) {
-            return response([
-                'user' => auth()->user(),
-                'access_token' => auth()->user()->createToken('authToken')->accessToken
-            ], Response::HTTP_OK);
+        $response = Http::asForm()->post(env('APP_URL') . '/oauth/token', [
+            'grant_type' => 'password',
+            'client_id' => env('CLIENT_ID'),
+            'client_secret' => env('CLIENT_SECRET'),
+            'username' => $request->username,
+            'password' => $request->password,
+            'scope' => '*',
+        ]);
+        $arr = json_decode($response, true);
+        if ($response->successful()){
+            $array = array(
+                'token_type' => $arr['token_type'],
+                'accessTokenExpiration' => $arr['expires_in'],
+                'accessToken' => $arr['access_token'],
+                'refreshToken' => $arr['refresh_token']
+            );
+            return $this->sendResponse($array, 'User info retrieved successfully.');
         }
-        return response([
-            'message' => 'This User does not exist'
-        ], Response::HTTP_UNAUTHORIZED);
+        return $this->sendResponse($arr, 'User info retrieved successfully.');
     }
 
-    public function register(Request $request)
+    public function refresh(RefreshTokenRequest $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        $response = Http::asForm()->post(env('APP_URL') . '/oauth/token', [
+            'grant_type' => 'refresh_token',
+            'client_id' => env('CLIENT_ID'),
+            'client_secret' => env('CLIENT_SECRET'),
+            'refresh_token' => $request->refresh_token,
         ]);
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password)
-        ]);
-
-        return response($user, Response::HTTP_CREATED);
+        return $this->sendResponse($response->json(), 'User info retrieved successfully.');
     }
+
 
 7-/ update routes/api.php </br>
 ````
