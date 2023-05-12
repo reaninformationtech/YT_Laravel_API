@@ -103,7 +103,15 @@
     }
 <br/>
 *** Create Request <br/>
-> php artisan make:request  Auth/LoginsRequest
+> `php artisan make:request  Auth/LoginsRequest`<br/>
+
+    public function rules()
+    {
+        return [
+            'username' => 'required',
+            'password' => 'required',
+        ];
+    }
 
 
 8-/ update routes/api.php </br>
