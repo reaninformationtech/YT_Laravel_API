@@ -1,4 +1,4 @@
-# How to Build REST API with Laravel 10
+# How to Build REST API with Laravel + Vue 3 typescript
 
 1-/ __composer create-project --prefer-dist laravel/laravel laravel-api__  <br/>
 > Config <br/>
@@ -27,7 +27,7 @@
 
 6-/ php artisan make:controller API/BaseController  <br/>
 
-    *** Create Function Login 
+    *** Create Function response 
 
         public function sendResponse($result, $message)
         {
@@ -103,21 +103,21 @@
     }
 
 
-7-/ update routes/api.php </br>
+8-/ update routes/api.php </br>
 ````
-use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\API\AuthController;
 
 Route::post('login', [AuthController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
 ````
-8-/ php artisan make:controller Api/ProductController</br>
+9-/ php artisan make:controller API/ProductController</br>
 
     public function index(Request $request){
         $product=Product::all();
         return response($product);
     }
 
-9-/ php artisan make:model Product -mR   </br>
+10-/ php artisan make:model Product -mR   </br>
 ## Create table 
         Schema::create('products', function (Blueprint $table) {
             $table->id();
@@ -128,7 +128,7 @@ Route::post('register', [AuthController::class, 'register']);
 
 ## Then => php artisan migrate 
 
-10-/ update routes/api.php </br>
+11-/ update routes/api.php </br>
 ````
 use App\Http\Controllers\Api\ProductController;
 
