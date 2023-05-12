@@ -59,10 +59,10 @@
 >`Import into controller `<br/>
 >  <html>
 >  <body>
->     <p>use App\Models\User; </p>
->     <p>use Illuminate\Support\Facades\Hash;</p>
->     <p>use Symfony\Component\HttpFoundation\Response;</p>
->     <p>use Illuminate\Validation\Rules;</p>
+>   <p>use Illuminate\Support\Facades\Http;</p>
+>   <p>use App\Http\Requests\Auth\LoginRequest;</p>
+>   <p>use App\Http\Requests\Auth\RefreshTokenRequest;</p>
+>   <p>use App\Http\Controllers\API\BaseController as BaseController;</p>
 > </body>
 > </html>
 
@@ -90,8 +90,7 @@
         }
         return $this->sendResponse($arr, 'User info retrieved successfully.');
     }
-    
-   
+
     public function refresh(RefreshTokenRequest $request)
     {
         $response = Http::asForm()->post(env('APP_URL') . '/oauth/token', [
