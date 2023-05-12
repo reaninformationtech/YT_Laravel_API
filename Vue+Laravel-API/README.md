@@ -103,10 +103,7 @@
     }
 <br/>
 *** Create Request <br/>
-````
-    php artisan make:request  Auth/LoginsRequest
-    
-````
+
     public function rules()
     {
         return [
