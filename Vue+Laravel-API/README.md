@@ -68,7 +68,7 @@
 
     *** Create Function Login 
 
-   public function login(LoginRequest $request)
+    public function login(LoginRequest $request)
     {
         $response = Http::asForm()->post(env('APP_URL') . '/oauth/token', [
             'grant_type' => 'password',
@@ -90,7 +90,8 @@
         }
         return $this->sendResponse($arr, 'User info retrieved successfully.');
     }
-
+    
+   
     public function refresh(RefreshTokenRequest $request)
     {
         $response = Http::asForm()->post(env('APP_URL') . '/oauth/token', [
