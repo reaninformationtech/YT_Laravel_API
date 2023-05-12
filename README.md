@@ -1,5 +1,4 @@
-# Welcome to JOINCODER 
-# Learn from tiny project 
+# Welcome to JOINCODER សម្រាប់អាយធី Code💻 Coffee☕ Metal🤘🏽
 
 🌐 LET’S CONNECT 🌐 <br/>
 ↪ TikTok - https://www.tiktok.com/@reantechnology <br/>
