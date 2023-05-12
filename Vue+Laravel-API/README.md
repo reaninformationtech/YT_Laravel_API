@@ -101,6 +101,9 @@
         ]);
         return $this->sendResponse($response->json(), 'User info retrieved successfully.');
     }
+<br/>
+*** Create Request <br/>
+> php artisan make:request  Auth/LoginsRequest
 
 
 8-/ update routes/api.php </br>
