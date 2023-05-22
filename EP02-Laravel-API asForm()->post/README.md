@@ -65,6 +65,57 @@ php artisan make:controller API/BaseController
             return response()->json($response, $code);
         }
 ```
+Then create RegisterController 
+
+```
+php artisan make:controller API/Auth/RegisterController
+
+use App\Http\Requests\Auth\RegisterRequest;
+use Exception;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\API\BaseController as BaseController;
+
+public function register(RegisterRequest $request)
+{
+    DB::beginTransaction();
+    try
+    {
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
+        DB::commit();
+        return $this->sendResponse($user, 'User info retrieved successfully.');
+
+    } catch (Exception $ex)
+    {
+        DB::rollBack();
+        abort(500, 'server.error');
+    }
+}
+
+```
+Then Create RegisterRequest
+```
+php artisan make:request  Auth/RegisterRequest
+
+public function authorize(): bool
+{
+    return true;
+}
+public function rules(): array
+{
+    return [
+        'email' => 'required|email|unique:users',
+        'password' => 'required',
+    ];
+}
+
+
 Then Create LoginController
 ```
 php artisan make:controller API/Auth/LoginController
@@ -126,58 +177,7 @@ public function rules()
     ];
 }
 ```
-Then create RegisterController 
 
-```
-php artisan make:controller API/Auth/RegisterController
-
-use App\Http\Requests\Auth\RegisterRequest;
-use Exception;
-use App\Models\User;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Hash;
-use App\Http\Controllers\API\BaseController as BaseController;
-
-public function register(RegisterRequest $request)
-{
-    DB::beginTransaction();
-    try
-    {
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->save();
-        DB::commit();
-        return $this->sendResponse($user, 'User info retrieved successfully.');
-
-    } catch (Exception $ex)
-    {
-        DB::rollBack();
-        abort(500, 'server.error');
-    }
-}
-
-
-```
-
-Then Create RegisterRequest
-```
-php artisan make:request  Auth/RegisterRequest
-
-public function authorize(): bool
-{
-    return true;
-}
-
-public function rules(): array
-{
-    return [
-        'email' => 'required|email|unique:users',
-        'password' => 'required',
-    ];
-}
 
 ```
 Then Add router in routes/api.php 
