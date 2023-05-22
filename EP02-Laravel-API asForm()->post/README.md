@@ -100,7 +100,6 @@ public function register(RegisterRequest $request)
     }
 }
 
-
 ```
 
 Then Create RegisterRequest
@@ -182,6 +181,18 @@ public function rules()
     ];
 }
 ```
+
+Then generate passport key 
+
+
+```
+php artisan passport:client --password
+
+CLIENT_ID=xxxx
+CLIENT_SECRET=2023
+
+```
+
 
 Then Add router in routes/api.php 
 ```
