@@ -3,7 +3,7 @@
 ## Create new project
 
 ```
-create-project --prefer-dist laravel/laravel laravel-api
+composer create-project --prefer-dist laravel/laravel laravel-api
 ```
 Then Config
 
