@@ -1,6 +1,6 @@
 # Build REST API with Laravel with Http::asForm()->post
 
-##1-Create new project 
+## Create new project
 
 ```
 create-project --prefer-dist laravel/laravel laravel-api
@@ -146,4 +146,3 @@ Route::post('login', [AuthController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
 
 ```
-
