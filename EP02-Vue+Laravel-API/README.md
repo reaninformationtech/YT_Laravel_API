@@ -1,5 +1,17 @@
-# Build REST API with Laravel 
-# Http::asForm()->post
+# Build REST API with Laravel with Http::asForm()->post
+
+##1-Create new project 
+
+```
+create-project --prefer-dist laravel/laravel laravel-api
+```
+Then Config
+
+```
+    - connect database<br/>>
+    - config valet
+```
+
 
 1-/ __composer create-project --prefer-dist laravel/laravel laravel-api__  <br/>
 > Config <br/>
