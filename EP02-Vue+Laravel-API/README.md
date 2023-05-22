@@ -19,15 +19,19 @@ php artisan migrate
 php artisan passport:install
 ```
 
+Then config on Model : User
+```
+use Laravel\Passport\HasApiTokens;
+```
+Then go to => config/auth.php (Add guards)
 
-2-/ composer require laravel/passport <br/>
-3-/ php artisan migrate <br/>
-4-/ php artisan passport:install<br/>
+```
+    'api' => [
+            'driver' => 'passport',
+            'provider' => 'users',
+        ],
+```
 
-5-/ update Model <br/>
-> __Config__ <br/>
-    a- app/Models/User.php => use Laravel\Passport\HasApiTokens; <br/>
-    b- config/auth.php =>  <br/>
 
 <html>
 <body>
