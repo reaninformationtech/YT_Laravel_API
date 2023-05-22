@@ -112,6 +112,12 @@ Then Create  Login Request
 ```
 php artisan make:request  Auth/LoginRequest
 
+public function authorize(): bool
+{
+    return true;
+}
+
+
 public function rules()
 {
     return [
@@ -133,19 +139,46 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\API\BaseController as BaseController;
 
+public function register(RegisterRequest $request)
+{
+    DB::beginTransaction();
+    try
+    {
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
+        DB::commit();
+        return $this->sendResponse($user, 'User info retrieved successfully.');
+
+    } catch (Exception $ex)
+    {
+        DB::rollBack();
+        abort(500, 'server.error');
+    }
+}
+
+
 ```
 
 Then Create RegisterRequest
 ```
 php artisan make:request  Auth/RegisterRequest
 
-public function rules()
+public function authorize(): bool
+{
+    return true;
+}
+
+public function rules(): array
 {
     return [
-        'username' => 'required',
+        'email' => 'required|email|unique:users',
         'password' => 'required',
     ];
 }
+
 ```
 Then Add router in routes/api.php 
 ```
