@@ -8,8 +8,8 @@ create-project --prefer-dist laravel/laravel laravel-api
 Then Config
 
 ```
-    - connect database<br/>>
-    - config valet
+- connect database
+- config valet
 ```
 
 
