@@ -104,6 +104,19 @@ use App\Http\Controllers\API\BaseController as BaseController;
 ```
 Then Create LoginRequest
 ```
+php artisan make:request  Auth/LoginRequest
+
+public function rules()
+{
+    return [
+        'username' => 'required',
+        'password' => 'required',
+    ];
+}
+```
+
+*** php artisan make:request  Auth/LoginRequest <br/> 
+
     public function rules()
     {
         return [
@@ -111,7 +124,7 @@ Then Create LoginRequest
             'password' => 'required',
         ];
     }
-```
+
 
 8-/ php artisan make:controller Auth/RegisterController  <br/>
 >`Import into controller `<br/>
