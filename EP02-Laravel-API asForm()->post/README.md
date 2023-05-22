@@ -181,6 +181,24 @@ public function rules()
     ];
 }
 ```
+Then Create  RefreshToken Request
+```
+php artisan make:request  Auth/RefreshTokenRequest
+
+public function authorize(): bool
+{
+    return true;
+}
+
+public function rules()
+{
+    return [
+        'refresh_token' => ['required']
+    ];
+}
+
+```
+
 
 Then generate passport key 
 
@@ -204,5 +222,14 @@ Route::post('register', [AuthController::class, 'register']);
 
 ```
 
+Then Add new router in routes/api.php for testing refreshtoken
+```
+Route::prefix('admin')->middleware('auth:api')->group(function () {
+    Route::post('refreshtoken', [LoginController::class, 'refresh']);
+});
 
-Referent : https://laravel.com/docs/9.x/passport#requesting-password-grant-tokens
+```
+
+
+
+Referent :https://laravel.com/docs/10.x/passport#requesting-password-grant-tokens
