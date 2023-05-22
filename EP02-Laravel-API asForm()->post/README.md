@@ -67,6 +67,8 @@ php artisan make:controller API/BaseController
 ```
 Then Create LoginController
 ```
+php artisan make:controller API/Auth/LoginController
+
 use Illuminate\Support\Facades\Http;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RefreshTokenRequest;
@@ -106,7 +108,7 @@ use App\Http\Controllers\API\BaseController as BaseController;
         return $this->sendResponse($response->json(), 'User info retrieved successfully.');
     }
 ```
-Then Create LoginRequest
+Then Create  Login Request
 ```
 php artisan make:request  Auth/LoginRequest
 
@@ -121,7 +123,8 @@ public function rules()
 Then create RegisterController 
 
 ```
-php artisan make:controller Auth/RegisterController
+php artisan make:controller API/Auth/RegisterController
+
 use Illuminate\Support\Facades\Http;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Http\Requests\Auth\RefreshTokenRequest;
@@ -142,11 +145,10 @@ public function rules()
 }
 ```
 Then Add router in routes/api.php 
-
 ```
-use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\Auth\LoginController;
 
-Route::post('login', [AuthController::class, 'login']);
+Route::post('login', [LoginController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
 
 ```
