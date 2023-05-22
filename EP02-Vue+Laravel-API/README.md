@@ -32,11 +32,12 @@ Then go to => config/auth.php (Add guards)
         ],
 ```
 
-6-/ php artisan make:controller API/BaseController  <br/>
+Then Create Controller BaseController for respone message have two function 
 
-    *** Create Function response 
+```
+php artisan make:controller API/BaseController
 
-        public function sendResponse($result, $message)
+    public function sendResponse($result, $message)
         {
             $response = [
                 'success' => true,
@@ -59,8 +60,7 @@ Then go to => config/auth.php (Add guards)
             }
             return response()->json($response, $code);
         }
-
-
+```
 
 7-/ php artisan make:controller Auth/LoginController  <br/>
 >`Import into controller `<br/>
