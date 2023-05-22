@@ -203,3 +203,6 @@ Route::post('login', [LoginController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
 
 ```
+
+
+Referent : https://laravel.com/docs/9.x/passport#requesting-password-grant-tokens
