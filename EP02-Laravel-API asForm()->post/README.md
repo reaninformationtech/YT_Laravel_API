@@ -125,9 +125,12 @@ Then create RegisterController
 ```
 php artisan make:controller API/Auth/RegisterController
 
-use Illuminate\Support\Facades\Http;
 use App\Http\Requests\Auth\RegisterRequest;
-use App\Http\Requests\Auth\RefreshTokenRequest;
+use Exception;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\API\BaseController as BaseController;
 
 ```
@@ -147,6 +150,7 @@ public function rules()
 Then Add router in routes/api.php 
 ```
 use App\Http\Controllers\API\Auth\LoginController;
+use App\Http\Controllers\API\Auth\RegisterController;
 
 Route::post('login', [LoginController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
