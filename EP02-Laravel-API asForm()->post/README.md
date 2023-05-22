@@ -91,7 +91,7 @@ public function register(RegisterRequest $request)
         $user->password = Hash::make($request->password);
         $user->save();
         DB::commit();
-        return $this->sendResponse($user, 'User info retrieved successfully.');
+        return $this->sendResponse($user, 'Successfully created!.');
 
     } catch (Exception $ex)
     {
@@ -149,7 +149,7 @@ use App\Http\Controllers\API\BaseController as BaseController;
             );
             return $this->sendResponse($array, 'User info retrieved successfully.');
         }
-        return $this->sendResponse($arr, 'User info retrieved successfully.');
+         return $this->sendResponse($arr, 'Server.error');
     }
 
     public function refresh(RefreshTokenRequest $request)
@@ -160,7 +160,7 @@ use App\Http\Controllers\API\BaseController as BaseController;
             'client_secret' => env('CLIENT_SECRET'),
             'refresh_token' => $request->refresh_token,
         ]);
-        return $this->sendResponse($response->json(), 'User info retrieved successfully.');
+        return $this->sendResponse($response->json(), 'Retrieved successfully.');
     }
 ```
 Then Create  Login Request
