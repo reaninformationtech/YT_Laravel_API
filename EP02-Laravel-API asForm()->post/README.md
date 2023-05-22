@@ -226,7 +226,7 @@ Route::post('refreshtoken', [LoginController::class, 'refresh']);
 Referent :https://laravel.com/docs/10.x/passport#requesting-password-grant-tokens
 
 🌐 LET’S CONNECT 🌐 <br/>
-↪ YouTube - https://www.youtube.com/@JoinCoder 
+↪ YouTube - https://www.youtube.com/@JoinCoder <br/>
 ↪ TikTok - https://www.tiktok.com/@reantechnology <br/>
 ↪ Facebook - https://www.facebook.com/reaninformationtechnology <br/>
 ↪ Telegram - https://t.me/reanitofficial <br/>
