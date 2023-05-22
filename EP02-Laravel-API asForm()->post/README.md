@@ -5,11 +5,15 @@
 ```
 composer create-project --prefer-dist laravel/laravel EP02-laravel-api
 ```
-Then Config
-
+Then connect database 
 ```
-- connect database
-- config valet
+DB_DATABASE=ep02_api
+DB_USERNAME=root
+DB_PASSWORD=xxxxxxx
+```
+Then create valet link 
+```
+valet link ep02-valet
 ```
 
 Then install passport
