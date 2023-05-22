@@ -141,42 +141,9 @@ Then Add router in routes/api.php
 
 ```
 use App\Http\Controllers\API\AuthController;
+
 Route::post('login', [AuthController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
 
 ```
-
-9-/ php artisan make:controller API/ProductController</br>
-
-    public function index(Request $request){
-        $product=Product::all();
-        return response($product);
-    }
-
-10-/ php artisan make:model Product -mR   </br>
-## Create table 
-        Schema::create('products', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->decimal('price', 12, 3)->nullable();
-            $table->timestamps();
-        });
-
-## Then => php artisan migrate 
-
-11-/ update routes/api.php </br>
-````
-use App\Http\Controllers\Api\ProductController;
-
-Route::prefix('admin')->middleware('auth:api')->group(function () {
-    Route::resource('getproduct', ProductController::class);
-});
-````
-## Data for testing
-````
-INSERT INTO products (name,price,created_at,updated_at) VALUES
-	 ('iphone x',120.000,NULL,NULL),
-	 ('Samsung',130.000,NULL,NULL);
-````
-
 
