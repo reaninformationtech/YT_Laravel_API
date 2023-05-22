@@ -199,9 +199,7 @@ public function rules()
 
 ```
 
-
 Then generate passport key 
-
 
 ```
 php artisan passport:client --password
@@ -218,15 +216,8 @@ use App\Http\Controllers\API\Auth\LoginController;
 use App\Http\Controllers\API\Auth\RegisterController;
 
 Route::post('login', [LoginController::class, 'login']);
-Route::post('register', [AuthController::class, 'register']);
-
-```
-
-Then Add new router in routes/api.php for testing refreshtoken
-```
-Route::prefix('admin')->middleware('auth:api')->group(function () {
-    Route::post('refreshtoken', [LoginController::class, 'refresh']);
-});
+Route::post('register', [RegisterController::class, 'register']);
+Route::post('refreshtoken', [LoginController::class, 'refresh']);
 
 ```
 
