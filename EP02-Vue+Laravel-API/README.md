@@ -114,36 +114,38 @@ public function rules()
     ];
 }
 ```
+Then create RegisterController 
 
-*** php artisan make:request  Auth/LoginRequest <br/> 
+```
+php artisan make:controller Auth/RegisterController
+use Illuminate\Support\Facades\Http;
+use App\Http\Requests\Auth\RegisterRequest;
+use App\Http\Requests\Auth\RefreshTokenRequest;
+use App\Http\Controllers\API\BaseController as BaseController;
 
-    public function rules()
-    {
-        return [
-            'username' => 'required',
-            'password' => 'required',
-        ];
-    }
+```
 
+Then Create RegisterRequest
+```
+php artisan make:request  Auth/RegisterRequest
 
-8-/ php artisan make:controller Auth/RegisterController  <br/>
->`Import into controller `<br/>
->  <html>
->  <body>
->   <p>use Illuminate\Support\Facades\Http;</p>
->   <p>use App\Http\Requests\Auth\LoginRequest;</p>
->   <p>use App\Http\Requests\Auth\RefreshTokenRequest;</p>
->   <p>use App\Http\Controllers\API\BaseController as BaseController;</p>
-> </body>
-> </html>
+public function rules()
+{
+    return [
+        'username' => 'required',
+        'password' => 'required',
+    ];
+}
+```
+Then Add router in routes/api.php 
 
-8-/ update routes/api.php </br>
-````
+```
 use App\Http\Controllers\API\AuthController;
-
 Route::post('login', [AuthController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
-````
+
+```
+
 9-/ php artisan make:controller API/ProductController</br>
 
     public function index(Request $request){
