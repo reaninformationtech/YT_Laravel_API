@@ -61,21 +61,14 @@ php artisan make:controller API/BaseController
             return response()->json($response, $code);
         }
 ```
+Then Create LoginController
+```
+use Illuminate\Support\Facades\Http;
+use App\Http\Requests\Auth\LoginRequest;
+use App\Http\Requests\Auth\RefreshTokenRequest;
+use App\Http\Controllers\API\BaseController as BaseController;
 
-7-/ php artisan make:controller Auth/LoginController  <br/>
->`Import into controller `<br/>
->  <html>
->  <body>
->   <p>use Illuminate\Support\Facades\Http;</p>
->   <p>use App\Http\Requests\Auth\LoginRequest;</p>
->   <p>use App\Http\Requests\Auth\RefreshTokenRequest;</p>
->   <p>use App\Http\Controllers\API\BaseController as BaseController;</p>
-> </body>
-> </html>
-
-    *** Create Function Login 
-
-    public function login(LoginRequest $request)
+ public function login(LoginRequest $request)
     {
         $response = Http::asForm()->post(env('APP_URL') . '/oauth/token', [
             'grant_type' => 'password',
@@ -108,9 +101,9 @@ php artisan make:controller API/BaseController
         ]);
         return $this->sendResponse($response->json(), 'User info retrieved successfully.');
     }
-<br/>
-*** php artisan make:request  Auth/LoginRequest <br/> 
-
+```
+Then Create LoginRequest
+```
     public function rules()
     {
         return [
@@ -118,7 +111,7 @@ php artisan make:controller API/BaseController
             'password' => 'required',
         ];
     }
-
+```
 
 8-/ php artisan make:controller Auth/RegisterController  <br/>
 >`Import into controller `<br/>
