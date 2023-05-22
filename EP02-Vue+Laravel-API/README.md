@@ -32,18 +32,6 @@ Then go to => config/auth.php (Add guards)
         ],
 ```
 
-
-<html>
-<body>
-<p>update guards</p>
-</body>
-</html>
-
-        'api' => [
-            'driver' => 'passport',
-            'provider' => 'users',
-        ],
-
 6-/ php artisan make:controller API/BaseController  <br/>
 
     *** Create Function response 
