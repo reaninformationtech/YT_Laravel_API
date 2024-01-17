@@ -6,4 +6,5 @@
 ↪ TikTok - https://www.tiktok.com/@reaninformationtech <br/>
 ↪ Facebook - https://www.facebook.com/reaninformationtech <br/>
 ↪ Telegram Document - https://t.me/reaninformationtech <br/>
-Telegram : https://t.me/reanitofficialsoftware <br/>
+
+Any problem with code let's  me know !
